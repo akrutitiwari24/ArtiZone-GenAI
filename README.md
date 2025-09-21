@@ -1,270 +1,242 @@
-# Artizone - AI-Powered Artisan Marketplace
+# 🎨 Artizone - AI-Powered Artisan Marketplace
 
-Artizone is a comprehensive full-stack web application that connects local artisans with vendors, customers, and collaborators through an AI-powered marketplace platform.
+A modern, full-stack marketplace connecting local artisans with customers through AI-powered features and beautiful design.
 
-## 🌟 Features
+## 🌐 Live Demo
 
-### Core Functionality
-- **Role-based Authentication**: Support for Artisans, Vendors, and Customers
-- **AI-Powered Pricing**: Intelligent pricing suggestions based on market analysis
-- **Audio Storytelling**: Artisans can record their stories with AI transcription
-- **Product Catalog**: Comprehensive marketplace with search, filters, and categories
-- **AI Recommendations**: Personalized suggestions for users and products
-- **Event Management**: Community events, workshops, and exhibitions
-- **Mentorship Matching**: Connect apprentices with master artisans
+**Deployed App:** [https://artizone-marketplace.surge.sh](https://artizone-marketplace.surge.sh)
 
-### Technical Features
-- **Modern UI/UX**: Clean, warm design with earthy tones and smooth animations
-- **Responsive Design**: Fully responsive across desktop, tablet, and mobile
-- **Real-time Features**: Live notifications and updates
-- **File Upload**: Support for product images and artisan media
-- **Search & Filtering**: Advanced search with multiple filter options
+## ✨ Features
 
-## 🛠 Tech Stack
+### 🎨 **Frontend (React)**
+- **Modern UI/UX** with burgundy, pink, and beige color scheme
+- **Responsive Design** that works on all devices
+- **Real Product Images** from Unsplash for authentic feel
+- **Artisan Profiles** with professional photos
+- **Shopping Cart & Wishlist** functionality
+- **Order Tracking** system
+- **User Authentication** with role management
+- **AI Recommendations** sidebar
+
+### 🚀 **Backend (Node.js)**
+- **Express.js** REST API
+- **MongoDB** database with Mongoose
+- **JWT Authentication** with bcrypt
+- **AI Integration** for pricing and recommendations
+- **File Upload** with Cloudinary
+- **Rate Limiting** and security middleware
+
+### 👥 **User Roles**
+- **Artisans** - Create and sell handmade products
+- **Vendors** - Purchase products in bulk for resale
+- **Customers** - Buy unique handmade items
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- **React.js** with TypeScript
-- **TailwindCSS** for styling
-- **Framer Motion** for animations
-- **React Router** for navigation
+- **React 18** with hooks
+- **React Router 6** for navigation
+- **Tailwind CSS** for styling
 - **Axios** for API calls
 - **Lucide React** for icons
+- **Context API** for state management
 
 ### Backend
 - **Node.js** with Express.js
 - **MongoDB** with Mongoose
 - **JWT** for authentication
 - **bcryptjs** for password hashing
-- **OpenAI API** for AI features
-- **Cloudinary** for file storage
-- **Express Validator** for input validation
+- **Cloudinary** for image storage
+- **OpenAI** for AI features
+- **Multer** for file uploads
 
-### AI/ML Integration
-- **OpenAI GPT-3.5** for content generation and recommendations
-- **Whisper API** for audio transcription
-- **Custom pricing algorithms** for market analysis
+## 📁 Project Structure
+
+```
+ArtiZone-1/
+├── client/                 # React frontend
+│   ├── public/            # Static files
+│   ├── src/
+│   │   ├── components/    # Reusable components
+│   │   ├── contexts/      # React contexts
+│   │   ├── pages/         # Page components
+│   │   ├── services/      # API services
+│   │   └── App.js         # Main app component
+│   └── package.json
+├── server/                # Node.js backend
+│   ├── models/           # Database models
+│   ├── routes/           # API routes
+│   ├── middleware/       # Custom middleware
+│   └── index.js          # Server entry point
+└── package.json          # Root package.json
+```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- MongoDB (local or MongoDB Atlas)
-- OpenAI API key
-- Cloudinary account (optional)
-
-### MongoDB Setup Options
-
-**Option 1: MongoDB Atlas (Recommended)**
-1. Create a free account at [MongoDB Atlas](https://www.mongodb.com/atlas)
-2. Create a new cluster
-3. Get your connection string and update `MONGODB_URI` in `.env`
-
-**Option 2: Local MongoDB**
-1. Install MongoDB locally
-2. Start MongoDB service: `brew services start mongodb-community` (macOS) or `sudo systemctl start mongod` (Linux)
-3. Use `mongodb://localhost:27017/artizone` as `MONGODB_URI`
+- Node.js 16+
+- MongoDB
+- npm or yarn
 
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd artizone
-   ```
+```bash
+git clone https://github.com/akrutitiwari24/ArtiZone-GenAI.git
+cd ArtiZone-GenAI
+```
 
 2. **Install dependencies**
-   ```bash
-   npm run install-all
-   ```
-
-3. **Environment Setup**
-   
-   Create a `.env` file in the `server` directory:
-   ```env
-   PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/artizone
-   JWT_SECRET=your_jwt_secret_key_here
-   CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-   CLOUDINARY_API_KEY=your_cloudinary_api_key
-   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
-   OPENAI_API_KEY=your_openai_api_key_here
-   NODE_ENV=development
-   ```
-
-4. **Seed the database**
-   ```bash
-   cd server
-   node seed.js
-   ```
-
-5. **Start the development servers**
-   ```bash
-   # From the root directory
-   npm run dev
-   ```
-
-   This will start both the backend server (port 5000) and frontend development server (port 3000).
-
-### Alternative: Start servers separately
-
-**Backend:**
 ```bash
-cd server
+npm run install-all
+```
+
+3. **Set up environment variables**
+```bash
+# Copy server environment template
+cp server/env.example server/.env
+
+# Edit server/.env with your configuration
+```
+
+4. **Start the development servers**
+```bash
+# Start both frontend and backend
 npm run dev
+
+# Or start individually
+npm run server  # Backend on port 5000
+npm run client  # Frontend on port 3000
 ```
 
-**Frontend:**
-```bash
-cd client
-npm start
-```
+## 📱 Pages & Features
 
-## 📱 Usage
+### 🏠 **Homepage**
+- Hero section with statistics
+- Feature highlights
+- Customer testimonials
+- Call-to-action sections
 
-### Test Accounts
-The seed script creates several test accounts:
+### 🛒 **Marketplace**
+- Product listings with real images
+- AI-powered recommendations
+- Search and filtering
+- Add to cart functionality
 
-**Artisan Account:**
-- Email: `sarah.chen@example.com`
-- Password: `password123`
+### 👨‍🎨 **Artisans**
+- Artisan directory with profiles
+- Specialties and experience
+- Sample products
+- Contact and follow features
 
-**Vendor Account:**
-- Email: `retail@craftgallery.com`
-- Password: `password123`
+### 📅 **Events**
+- Workshop and exhibition listings
+- Registration system
+- Event filtering (online/in-person)
+- Progress tracking
 
-**Customer Account:**
-- Email: `customer1@example.com`
-- Password: `password123`
+### 🌍 **Community**
+- Featured artisans
+- Customer testimonials
+- Community achievements
+- Success stories
 
-### Key Features to Try
+### 🔐 **Authentication**
+- Multi-role registration
+- Secure login/logout
+- Password reset functionality
+- Social login options
 
-1. **Registration & Login**: Create accounts for different user roles
-2. **Profile Management**: Update profiles and add artisan-specific information
-3. **Product Creation**: Artisans can add products with AI pricing suggestions
-4. **Marketplace Browsing**: Search and filter products
-5. **AI Features**: Try the pricing suggestions and content generation
-6. **Event Management**: Create and register for events
+### 👤 **User Dashboard**
+- Order history
+- Profile management
+- Statistics overview
+- Quick actions
 
-## 🏗 Project Structure
+## 🎨 Design System
 
-```
-artizone/
-├── client/                 # React frontend
-│   ├── src/
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── context/        # React context providers
-│   │   ├── types/          # TypeScript type definitions
-│   │   └── ...
-│   └── package.json
-├── server/                 # Node.js backend
-│   ├── models/             # MongoDB models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── seed.js             # Database seeding script
-│   └── package.json
-└── package.json           # Root package.json
-```
+### Colors
+- **Primary (Burgundy):** #dc2626
+- **Secondary (Pink):** #ec4899
+- **Accent (Beige):** #e69a4a
+- **Background:** #fefdfb
+
+### Typography
+- **Font:** Inter (Google Fonts)
+- **Weights:** 300, 400, 500, 600, 700, 800
 
 ## 🔧 API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - User registration
 - `POST /api/auth/login` - User login
-- `GET /api/auth/me` - Get current user
-- `POST /api/auth/refresh` - Refresh token
-
-### Users
-- `GET /api/users/profile/:id` - Get user profile
-- `PUT /api/users/profile` - Update profile
-- `GET /api/users/artisans` - Get artisans with filters
-- `GET /api/users/vendors` - Get vendors with filters
+- `POST /api/auth/logout` - User logout
 
 ### Products
-- `GET /api/products` - Get products with filters
-- `GET /api/products/:id` - Get single product
-- `POST /api/products` - Create product (artisan only)
+- `GET /api/products` - Get all products
+- `GET /api/products/:id` - Get product by ID
+- `POST /api/products` - Create product
 - `PUT /api/products/:id` - Update product
-- `POST /api/products/:id/reviews` - Add review
-- `POST /api/products/:id/favorite` - Toggle favorite
+- `DELETE /api/products/:id` - Delete product
 
-### AI Features
-- `POST /api/ai/transcribe-audio` - Transcribe audio story
-- `POST /api/ai/suggest-price` - Get pricing suggestions
-- `POST /api/ai/generate-content` - Generate marketing content
-- `GET /api/ai/recommendations/:userId` - Get user recommendations
-- `POST /api/ai/mentorship-match` - Find mentorship matches
-
-### Events
-- `GET /api/events` - Get events with filters
-- `GET /api/events/:id` - Get single event
-- `POST /api/events` - Create event
-- `POST /api/events/:id/register` - Register for event
+### Users
+- `GET /api/users/profile` - Get user profile
+- `PUT /api/users/profile` - Update profile
+- `GET /api/users/artisans` - Get artisans
 
 ### Orders
-- `POST /api/orders` - Create order
 - `GET /api/orders` - Get user orders
-- `GET /api/orders/:id` - Get single order
-- `PUT /api/orders/:id/status` - Update order status
+- `POST /api/orders` - Create order
+- `GET /api/orders/:id` - Get order details
 
-## 🎨 Design System
-
-### Color Palette
-- **Primary**: Warm browns and beiges (`#8B7355`, `#B5A896`)
-- **Secondary**: Muted greens (`#3A9D3A`, `#5BB85B`)
-- **Accent**: Earthy oranges (`#D97316`, `#E38D41`)
-
-### Typography
-- **Primary Font**: Poppins (clean, modern)
-- **Display Font**: Nunito (friendly, artistic)
-
-### Components
-- Consistent button styles (primary, secondary, outline)
-- Card-based layouts for products and profiles
-- Smooth micro-animations throughout
-- Responsive grid systems
+### AI Features
+- `GET /api/ai/recommendations` - Get AI recommendations
+- `POST /api/ai/pricing` - Get pricing suggestions
 
 ## 🚀 Deployment
 
-### Frontend (Vercel)
-1. Connect your GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+### Frontend (Surge.sh)
+```bash
+cd client
+npm run build
+surge build your-domain.surge.sh
+```
 
-### Backend (Render/Heroku)
-1. Connect your GitHub repository
-2. Set environment variables
-3. Deploy automatically on push to main branch
-
-### Database (MongoDB Atlas)
-1. Create a MongoDB Atlas cluster
-2. Update `MONGODB_URI` in environment variables
-3. Configure IP whitelist and database user
+### Backend (Heroku/Railway)
+```bash
+# Set environment variables
+# Deploy to your preferred platform
+```
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
 
-## 📝 License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
+## 👥 Team
 
-- OpenAI for AI capabilities
-- Unsplash for placeholder images
-- The artisan community for inspiration
-- All contributors and supporters
+- **Frontend Development:** React, Tailwind CSS
+- **Backend Development:** Node.js, Express, MongoDB
+- **AI Integration:** OpenAI API
+- **Design:** Custom burgundy/pink/beige theme
+- **Deployment:** Surge.sh, Heroku
+
+## 🔗 Links
+
+- **Live Demo:** [https://artizone-marketplace.surge.sh](https://artizone-marketplace.surge.sh)
+- **GitHub Repository:** [https://github.com/akrutitiwari24/ArtiZone-GenAI](https://github.com/akrutitiwari24/ArtiZone-GenAI)
 
 ## 📞 Support
 
-For support, email support@artizone.com or join our community Discord server.
+For support or questions, please open an issue in the GitHub repository.
 
 ---
 
-**Made with ❤️ for artisans worldwide**
+**Built with ❤️ for artisans worldwide** 🎨✨
